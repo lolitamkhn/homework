@@ -5,6 +5,7 @@ class House:
 
     def __len__(self):
         return self.number_of_floors
+
     def __str__(self):
         return f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
 
@@ -14,6 +15,7 @@ class House:
                 print(floor)
         else:
             print("Такого этажа не существует")
+
     def __eq__(self, other):
         if isinstance(other, House):
             return self.number_of_floors == other.number_of_floors
@@ -63,6 +65,8 @@ class House:
 
     def __iadd__(self, value):
         return self.__add__(value)
+
+
 h1 = House('ЖК Эльбрус', 10)
 
 h2 = House('ЖК Акация', 20)
@@ -72,40 +76,31 @@ print(h1)
 
 print(h2)
 
+print(h1 == h2)  # __eq__
 
-print(h1 == h2) # __eq__
-
-
-
-h1 = h1 + 10 # __add__
+h1 = h1 + 10  # __add__
 
 print(h1)
 
 print(h1 == h2)
 
-
-
-h1 += 10 # __iadd__
+h1 += 10  # __iadd__
 
 print(h1)
 
-
-
-h2 = 10 + h2 # __radd__
+h2 = 10 + h2  # __radd__
 
 print(h2)
 
+print(h1 > h2)  # __gt__
 
+print(h1 >= h2)  # __ge__
 
-print(h1 > h2) # __gt__
+print(h1 < h2)  # __lt__
 
-print(h1 >= h2) # __ge__
+print(h1 <= h2)  # __le__
 
-print(h1 < h2) # __lt__
-
-print(h1 <= h2) # __le__
-
-print(h1 != h2) # __ne__
+print(h1 != h2)  # __ne__
 # __len__
 
 print(len(h1))
